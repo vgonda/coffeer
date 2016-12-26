@@ -10,7 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161226190341) do
+ActiveRecord::Schema.define(version: 20161226211924) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "check_ins", force: :cascade do |t|
     t.integer  "user_id"
@@ -18,8 +21,10 @@ ActiveRecord::Schema.define(version: 20161226190341) do
     t.string   "location"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["roast_id"], name: "index_check_ins_on_roast_id"
-    t.index ["user_id"], name: "index_check_ins_on_user_id"
+    t.integer  "rating"
+    t.text     "comment"
+    t.index ["roast_id"], name: "index_check_ins_on_roast_id", using: :btree
+    t.index ["user_id"], name: "index_check_ins_on_user_id", using: :btree
   end
 
   create_table "roasts", force: :cascade do |t|
@@ -45,8 +50,8 @@ ActiveRecord::Schema.define(version: 20161226190341) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
-    t.index ["email"], name: "index_users_on_email", unique: true
-    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+    t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
 end

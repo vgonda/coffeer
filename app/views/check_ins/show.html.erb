@@ -15,5 +15,15 @@
   <%= @check_in.created_at %>
 </p>
 
+<p>
+  <strong>Rating:</strong>
+  <%= @check_in.rating %>
+</p>
+
+<p>
+  <strong>Comment:</strong>
+  <%= @check_in.comment %>
+</p>
+
 <%= link_to 'Edit', edit_check_in_path(@check_in) %> |
 <%= link_to 'Back', check_ins_path %>

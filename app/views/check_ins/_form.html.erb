@@ -21,6 +21,16 @@
     <%= f.collection_select(:roast_id, Roast.all, :id, :name, include_blank: true) %>
   </div>
 
+  <div class="field">
+    <%= f.label :rating %>
+    <%= f.select(:rating, [1,2,3,4,5]) %>
+  </div>
+
+  <div class="field">
+    <%= f.label :comment %>
+    <%= f.text_area :comment %>
+  </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>
