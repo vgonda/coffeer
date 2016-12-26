@@ -1,18 +1,18 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>User:</strong>
-  <%= @check_in.user %>
-</p>
-
-<p>
   <strong>Location:</strong>
   <%= @check_in.location %>
 </p>
 
 <p>
   <strong>Roast:</strong>
-  <%= @check_in.roast %>
+  <%= @check_in.roast.name %>
+</p>
+
+<p>
+  <strong>Time:</strong>
+  <%= @check_in.created_at %>
 </p>
 
 <%= link_to 'Edit', edit_check_in_path(@check_in) %> |

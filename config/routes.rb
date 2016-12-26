@@ -3,5 +3,5 @@ Rails.application.routes.draw do
   resources :roasts
   devise_for :users
 
-  root "roasts#index"
+  root "check_ins#index"
 end

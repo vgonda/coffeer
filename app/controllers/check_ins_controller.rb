@@ -4,7 +4,7 @@ class CheckInsController < ApplicationController
   # GET /check_ins
   # GET /check_ins.json
   def index
-    @check_ins = CheckIn.all
+    @check_ins = current_user.check_ins.all
   end
 
   # GET /check_ins/1
@@ -14,7 +14,7 @@ class CheckInsController < ApplicationController
 
   # GET /check_ins/new
   def new
-    @check_in = CheckIn.new
+    @check_in = current_user.check_ins.new
   end
 
   # GET /check_ins/1/edit
@@ -24,7 +24,7 @@ class CheckInsController < ApplicationController
   # POST /check_ins
   # POST /check_ins.json
   def create
-    @check_in = CheckIn.new(check_in_params)
+    @check_in = current_user.check_ins.new(check_in_params)
 
     respond_to do |format|
       if @check_in.save
@@ -64,11 +64,11 @@ class CheckInsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_check_in
-      @check_in = CheckIn.find(params[:id])
+      @check_in = current_user.check_ins.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def check_in_params
-      params.require(:check_in).permit(:user_id, :roast_id, :location)
+      params.require(:check_in).permit(:roast_id, :location)
     end
 end
