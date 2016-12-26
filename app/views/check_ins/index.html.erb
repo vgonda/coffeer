@@ -19,7 +19,7 @@
       <tr>
         <td><%= check_in.location %></td>
         <td><%= check_in.roast.name %></td>
-        <td><%= check_in.created_at %></td>
+        <td><%= check_in.created_at.strftime("%m/%d/%Y") %></td>
         <td><%= link_to 'Show', check_in %></td>
         <td><%= link_to 'Edit', edit_check_in_path(check_in) %></td>
         <td><%= link_to 'Destroy', check_in, method: :delete, data: { confirm: 'Are you sure?' } %></td>
