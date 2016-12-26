@@ -6,8 +6,16 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-User.new(
+User.create(
   email:                 "user@example.com",
   password:              "abc123",
   password_confirmation: "abc123",
+)
+
+Roast.create(
+  name:        "Zirikana",
+  origin:      "Rwanda",
+  roaster:     "Intelligentsia",
+  harvester:   "Nyarusiza/Buf Coffee",
+  description: "clean flavors of bergamot, pear, and sweet almond",
 )

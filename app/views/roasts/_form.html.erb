@@ -1,0 +1,42 @@
+<%= form_for(roast) do |f| %>
+  <% if roast.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(roast.errors.count, "error") %> prohibited this roast from being saved:</h2>
+
+      <ul>
+      <% roast.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :origin %>
+    <%= f.text_field :origin %>
+  </div>
+
+  <div class="field">
+    <%= f.label :roaster %>
+    <%= f.text_field :roaster %>
+  </div>
+
+  <div class="field">
+    <%= f.label :harvester %>
+    <%= f.text_field :harvester %>
+  </div>
+
+  <div class="field">
+    <%= f.label :description %>
+    <%= f.text_area :description %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
