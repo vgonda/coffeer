@@ -18,7 +18,7 @@
 
   <div class="field">
     <%= f.label :roast_id %>
-    <%= f.collection_select(:roast_id, Roast.all, :id, :name, include_blank: true) %>
+    <%= f.collection_select(:roast_id, Roast.all, :id, :name, selected: params[:roast_id], include_blank: true) %>
   </div>
 
   <div class="field">

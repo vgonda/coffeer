@@ -26,4 +26,5 @@
 </p>
 
 <%= link_to 'Edit', edit_roast_path(@roast) %> |
+<%= link_to 'Check In', new_check_in_path(roast_id: @roast.id) %> |
 <%= link_to 'Back', roasts_path %>
